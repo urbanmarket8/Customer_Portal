@@ -1,0 +1,171 @@
+.pop-up {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  overflow-y: auto;
+}
+.shop .cart .container {
+  margin: 0;
+}
+.cart-content {
+  background-color: white;
+  position: relative;
+  max-width: 900px;
+  height: auto;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 60px;
+  padding: 10px;
+  width: 90%;
+}
+
+table {
+  text-transform: uppercase;
+  border: 1px solid #e1e1e1;
+  width: 100%;
+}
+
+table thead {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+table thead th {
+  font-size: 1rem;
+  padding-top: 21px;
+  padding-bottom: 21px;
+  font-weight: 500;
+  color: #777777;
+  background: #ffffff;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+table tbody td {
+  font-size: 1.1rem;
+  padding-bottom: 15px;
+}
+
+.cart-content h4 {
+  display: inline-block;
+  padding-left: 25px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+.cart-content h4:hover {
+  color: #c14679;
+  cursor: default;
+}
+
+.cart .quantity-button {
+  border: 1px solid #e1e1e1;
+  background: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  font-weight: 400;
+  cursor: pointer;
+  color: #151515;
+  transition: 0.3s all ease;
+  line-height: 36px;
+  position: relative;
+  text-align: center;
+  margin: 0 10px;
+  font-size: 1.2rem;
+  outline: none;
+}
+.cart-quantity .quantity {
+  font-size: 1rem;
+}
+
+.cart .cart-body {
+  text-align: left;
+  padding: 20px 0 0px 27px;
+}
+
+.cart-body .cart-image {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  align-self: center;
+  display: inline-table;
+}
+.cart-body .cart-image img {
+  width: 100%;
+}
+
+.cart-button {
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 2;
+  border: 2px solid #a43664 !important;
+  border-radius: 6px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  background-color: #c14679 !important;
+  color: white;
+  outline: none;
+  z-index: 1;
+  padding: 15px 20px !important;
+  box-shadow: none !important;
+}
+.cart-button:hover,
+.cart-button:active {
+  color: #ffffff;
+  background-color: #c14679;
+  border-color: #c14679;
+}
+.cart-button:hover:after {
+  transform: translate3d(-50%, -50%, 0) scale(0);
+}
+.cart-button::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  padding-bottom: 110%;
+  border-radius: 50%;
+  transform: translate3d(-50%, -50%, 0) scale(1);
+  transition: inherit;
+  pointer-events: none;
+  z-index: -1;
+  border-color: #a43664;
+  background-color: #a43664;
+}
+.check-out {
+  display: grid;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+}
+.total-span {
+  color: #9b9b9b;
+  text-transform: capitalize;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.price-span {
+  line-height: 1.33333;
+  color: #151515;
+  font-weight: 400;
+  margin-right: 25px;
+}

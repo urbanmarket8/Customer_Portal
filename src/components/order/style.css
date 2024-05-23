@@ -1,0 +1,84 @@
+.cross-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+}
+.fa-times {
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+}
+
+.fa-times:hover {
+  color: #333;
+}
+
+.card {
+  margin: 0 30px 20px;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e1e1e1;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-header h5 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-body p {
+  margin: 5px 0;
+}
+
+.list-group-item {
+  border: none;
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table th {
+  font-size: 16px;
+  font-weight: 500;
+  color: #777777;
+  border-top: none;
+}
+
+.table td {
+  font-size: 16px;
+  vertical-align: middle;
+  border-top: none;
+}
+
+.table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.table tbody td {
+  padding: 10px 0;
+}
+
+.table tbody td:first-child {
+  text-align: left;
+}
+
+.table tbody td:last-child {
+  text-align: right;
+}

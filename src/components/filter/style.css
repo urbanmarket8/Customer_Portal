@@ -1,0 +1,74 @@
+.filterSidBar {
+  width: 20%;
+}
+
+.filterSidBar .filter-list {
+  display: block;
+  list-style: none;
+  padding: 1rem 0;
+  h5 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    color: #000;
+    margin: 0 0 13px 0;
+    border-top: 2px solid #000;
+    margin-bottom: 1rem;
+    padding-top: 18px;
+  }
+}
+
+.filterSidBar .filter-list .filter-link {
+  font-size: 12px;
+  height: 40px;
+  line-height: 40px;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+  color: #000;
+  z-index: 11;
+  transition: unset;
+  font-weight: 600;
+  border-bottom: none;
+  margin-bottom: 0;
+  padding: 0;
+  transition: all 0.25s ease-in-out;
+}
+.filterSidBar .filter-list .filter-link:hover,
+.filterSidBar .filter-link.active {
+  cursor: pointer;
+  color: #c14679;
+}
+
+@media (max-width: 767.98px) {
+  .filterSidBar {
+    left: -101%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 102;
+    max-width: 340px;
+    transition: all 0.5s ease;
+    background-color: #fff;
+    box-shadow: rgba(50, 50, 50, 0.2) 0 0 10px 0;
+    width: 100%;
+  }
+  .filterSidBar .header {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    align-items: center;
+    h5 {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      line-height: 1;
+      color: #000;
+      margin: 0 0 13px 0;
+      padding-top: 18px;
+    }
+  }
+  .open {
+    left: 0;
+  }
+}

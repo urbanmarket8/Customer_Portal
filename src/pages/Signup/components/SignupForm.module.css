@@ -1,0 +1,46 @@
+.form {
+  max-width: 688px;
+  height: 792px;
+  margin: auto;
+  margin-top: 4rem;
+  padding-top: 56px;
+  padding-bottom: 75px;
+  padding-left: 104px;
+  padding-right: 104px;
+  position: relative;
+  background-color: #fefefe;
+
+  .header {
+    color: #353940;
+
+    font-size: 26px;
+    letter-spacing: 0.52px;
+    margin-top: 25px;
+  }
+  .showPasswordBtn{
+    margin-left: 30rem;
+  }
+  .desc {
+    color: #616978;
+
+    font-size: 14px;
+    letter-spacing: 0.32px;
+    margin-bottom: 40px;
+  }
+
+  .label {
+    color: #26282a;
+  }
+
+  button[type="submit"] {
+    display: block;
+    width: 80%;
+    outline: none;
+    border: none;
+    margin-top: 68px;
+  }
+
+  :global(.intl-tel-input) {
+    width: 100%;
+  }
+}

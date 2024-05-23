@@ -1,0 +1,21 @@
+.container {
+  padding-top: 4rem;
+}
+
+.segment {
+  margin: auto;
+  margin-top: 4rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 4px;
+
+  img {
+    margin: auto;
+    width: 104px;
+    height: 58px;
+  }
+
+  p {
+    margin-top: 2rem;
+  }
+}

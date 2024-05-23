@@ -1,0 +1,55 @@
+form {
+  text-align: left;
+}
+.check .cart-content {
+  margin-top: 45px;
+}
+
+.close-button {
+  position: relative;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 2;
+  border: 2px solid #d2d3d4;
+  border-radius: 6px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  background-color: #f8f9fa;
+  color: black;
+  outline: none;
+  z-index: 1;
+  padding: 15px 20px;
+  min-width: 190px;
+}
+.close-button:hover,
+.close-button:active {
+  color: white;
+  background-color: #c14679;
+  border-color: #c14679;
+}
+.close-button:hover:after {
+  transform: translate3d(-50%, -50%, 0) scale(0);
+}
+.close-button::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  width: 110%;
+  padding-bottom: 110%;
+  border-radius: 50%;
+  transform: translate3d(-50%, -50%, 0) scale(1);
+  transition: inherit;
+  pointer-events: none;
+  z-index: -1;
+  border-color: #a43664;
+  background-color: #f8f9fa;
+}
+
+@media (max-width: 767.98px) {
+  .close-button {
+    min-width: auto;
+  }
+}

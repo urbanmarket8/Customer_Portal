@@ -1,0 +1,15 @@
+.cw-button {
+  border-radius: 5px;
+  font-size: 0.9rem;
+  padding: 8px 22px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.spinner {
+  height: 0.9rem;
+  width: 0.9rem;
+  position: absolute;
+  right: calc(50% - 0.45rem);
+  top: calc(50% - 0.45rem);
+}

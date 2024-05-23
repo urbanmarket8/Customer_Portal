@@ -1,0 +1,123 @@
+[
+    { 
+        "id":1,
+      "image":"/images/product/product-5-187x155.png",
+      "title":"fairytale brownies",
+      "category":"buscuits",
+      "price":23,
+      "count":0,
+      "total":0
+
+    },
+    { 
+        "id":2,
+      "image":"/images/product/product-6-140x137.png",
+      "title":"Chocolate biscuits",
+      "category":"buscuits",
+      "price":13,
+      "count":0,
+      "total":0
+
+    },
+    { 
+        "id":3,
+      "image":"/images/product/product-8-128x126.png",
+      "title":"soft biscuits",
+      "category":"buscuits",
+      "price":17,
+      "count":0,
+      "total":0
+
+    },
+    { 
+        "id":4,
+      "image":"/images/product/product-9-141x129.png",
+      "title":"drop biscuits",
+      "category":"buscuits",
+      "price":11,
+      "count":0,
+      "total":0
+
+    },
+    {
+    "id":5,
+    "image":"/images/product/product-10-144x146.png",
+    "title":"vegan cookies",
+    "category":"buscuits",
+    "price":23,
+    "count":0,
+    "total":0
+
+  },
+  {
+  "id":6,
+  "image":"/images/product/product-1-152x160.png",
+  "title":"chocolate truffle",
+  "category":"cake",
+  "price":23,
+  "count":0,
+  "total":0
+
+},
+  { 
+      "id":7,
+    "image":"/images/product/product-2-157x127.png",
+    "title":"Chocolate Pudding",
+    "category":"cake",
+    "price":25,
+    "count":0,
+    "total":0
+
+  },
+  { 
+      "id":8,
+    "image":"/images/product/product-3-179x114.png",
+    "title":"Dark Chocolate Cake",
+    "category":"cake",
+    "price":15,
+    "count":0,
+    "total":0
+
+  },
+  { 
+      "id":9,
+    "image":"/images/product/product-4-215x112.png",
+    "title":"Chocolate Cookies",
+    "category":"buscuits",
+    "price":12,
+    "count":0,
+    "total":0
+
+  },
+  {
+    "id" : 10,
+    "image":"/images/offer/offer-1-340x243.jpg",
+    "title":"PARTY CUPCAKES",
+    "category":"cake",
+    "price":32,
+    "count":0,
+    "total":0
+},
+{
+    "id" : 11,
+    "image":"/images/offer/offer-2-340x243.jpg",
+    "title":"CHOCO CAKES",
+    "category":"cake",
+    "price":32,
+    "count":0,
+    "total":0
+
+
+},
+{
+    "id" : 12,
+    "image":"/images/offer/offer-3-340x243.jpg",
+    "title":"WEDDING CAKES",
+    "category":"cake",
+    "price":50,
+    "count":0,
+    "total":0
+}
+    ] 
+
+
