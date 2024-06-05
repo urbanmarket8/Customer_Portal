@@ -1,5 +1,5 @@
-const BASE_URL = "https://api.vtbazaar.net/api/v1";
-
+// const BASE_URL = "https://api.vtbazaar.net/api/v1";
+const BASE_URL = "http://localhost:8080/api/v1";
 export const SIGN_UP_URL = `${BASE_URL}/auth/register`;
 export const LOGIN_URL = `${BASE_URL}/auth/login`;
 export const LIST_PRODUCTS = `${BASE_URL}/product/search`;
@@ -11,3 +11,4 @@ export const PLACE_ORDER = `${BASE_URL}/orders/place-order`;
 export const ALL_ORDERS = `${BASE_URL}/orders`;
 export const FORGET_PASSWORD_URL = `${BASE_URL}/auth/password-forgot`;
 export const RESET_PASSWORD_URL = `${BASE_URL}/auth/password-reset`;
+export const CHECKOUT_SESSION = `${BASE_URL}/orders/checkout-session`;

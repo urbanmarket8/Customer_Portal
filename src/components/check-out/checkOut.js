@@ -2,8 +2,16 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import "./style.css";
 import { useDispatch } from "react-redux";
-import { PlaceOrder } from "../../redux/order/orderAction";
+import { PlaceOrder, checkOutSess } from "../../redux/order/orderAction";
 import { IoMdClose } from "react-icons/io";
+import { loadStripe } from "@stripe/stripe-js";
+import { useQuery } from "../../services/queries/useQuery";
+import { checkOutSession } from "../../services/api/order";
+import Cookies from "js-cookie";
+
+const stripePromise = loadStripe(
+  "pk_test_51NBFbjCZIS24uQ8hYCaqcg0Fdt5AfwvEtJCtxBqITBJEdNB95Q0HfSEbxj2lvE7lYrRkUeSQiCnZAgtwXRW73JUv00FOD23dR6"
+);
 
 const CheckOut = () => {
   const [showCheckout, setShowCheckout] = useState(true);
@@ -35,7 +43,7 @@ const CheckOut = () => {
     setShowCheckout(false);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Perform form validation
@@ -64,10 +72,50 @@ const CheckOut = () => {
       return;
     }
 
-    // If no validation errors, dispatch the PlaceOrder action
-    dispatch(PlaceOrder(formData));
-    setShowCheckout(false);
+    // If payment method is 'cash', call PlaceOrder action
+    if (formData.paymentMethod.trim() === "cash") {
+      dispatch(PlaceOrder(formData));
+      setShowCheckout(false);
+    }
+
+    // If payment method is 'mastercard', call Stripe method
+    else if (formData.paymentMethod.trim() === "mastercard") {
+      const accessToken = Cookies.get("at");
+      console.log(formData);
+      console.log("token", accessToken);
+      const response = await fetch(
+        "http://localhost:8080/api/v1/orders/checkout-session",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${accessToken}`,
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+      // console.log("response", response);
+      // validationErrors.quantity = "Un available quantity;";
+
+      // if (response.status === 400 || response.ok === false) {
+      //   console.log("here");
+      //   setErrors(
+      //     quantityError: "Quantity in the cart is not availabele");
+      //   return;
+      // }
+      const { id } = await response.json();
+
+      const stripe = await stripePromise;
+      const { error } = await stripe.redirectToCheckout({ sessionId: id });
+
+      if (error) {
+        console.error("Error redirecting to checkout:", error);
+      }
+    }
   };
+  // If no validation errors, dispatch the PlaceOrder action
+  // dispatch(PlaceOrder(formData));
+  // setShowCheckout(false);
 
   if (!showCheckout) return null;
 
