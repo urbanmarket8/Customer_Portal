@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import "./style.css";
 import { useDispatch } from "react-redux";
-import { PlaceOrder, checkOutSess } from "../../redux/order/orderAction";
+import { PlaceOrder } from "../../redux/order/orderAction";
 import { IoMdClose } from "react-icons/io";
 import { loadStripe } from "@stripe/stripe-js";
-import { useQuery } from "../../services/queries/useQuery";
-import { checkOutSession } from "../../services/api/order";
 import Cookies from "js-cookie";
 
 const stripePromise = loadStripe(
@@ -24,6 +22,7 @@ const CheckOut = () => {
     paymentMethod: "", // New state for payment method
   });
   const [errors, setErrors] = useState({}); // State to manage form validation errors
+  const [apiError, setApiError] = useState("");
 
   const dispatch = useDispatch();
 
@@ -84,7 +83,7 @@ const CheckOut = () => {
       console.log(formData);
       console.log("token", accessToken);
       const response = await fetch(
-        "http://localhost:8080/api/v1/orders/checkout-session",
+        `https://api.vtbazaar.net/api/v1/orders/checkout-session`,
         {
           method: "POST",
           headers: {
@@ -94,22 +93,18 @@ const CheckOut = () => {
           body: JSON.stringify(formData),
         }
       );
-      // console.log("response", response);
-      // validationErrors.quantity = "Un available quantity;";
-
-      // if (response.status === 400 || response.ok === false) {
-      //   console.log("here");
-      //   setErrors(
-      //     quantityError: "Quantity in the cart is not availabele");
-      //   return;
-      // }
+      if (!response.ok) {
+        const errorData = await response.json();
+        setApiError(errorData.message || "An error occurred");
+        return;
+      }
       const { id } = await response.json();
-
       const stripe = await stripePromise;
       const { error } = await stripe.redirectToCheckout({ sessionId: id });
 
       if (error) {
         console.error("Error redirecting to checkout:", error);
+        setApiError("Error redirecting to checkout");
       }
     }
   };
@@ -218,6 +213,7 @@ const CheckOut = () => {
                 <div className="text-danger">{errors.paymentMethod}</div>
               )}
             </div>
+            {apiError && <div className="text-danger">{apiError}</div>}
             <div className="form-group pt-2 ">
               <button className="close-button" onClick={handleClick}>
                 Close
